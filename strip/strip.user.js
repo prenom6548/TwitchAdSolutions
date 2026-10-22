@@ -3,8 +3,8 @@
 // @namespace    https://github.com/pixeltris/TwitchAdSolutions
 // @version      1.0
 // @description  Multiple solutions for blocking Twitch ads (strip)
-// @updateURL    https://github.com/pixeltris/TwitchAdSolutions/raw/master/strip/strip.user.js
-// @downloadURL  https://github.com/pixeltris/TwitchAdSolutions/raw/master/strip/strip.user.js
+// @updateURL    https://github.com/prenom6548/TwitchAdSolutions/raw/master/strip/strip.user.js
+// @downloadURL  https://github.com/prenom6548/TwitchAdSolutions/raw/master/strip/strip.user.js
 // @author       pixeltris
 // @match        *://*.twitch.tv/*
 // @run-at       document-start
