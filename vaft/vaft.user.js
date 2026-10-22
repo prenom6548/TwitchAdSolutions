@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         TwitchAdSolutions (vaft) - ESSAI qualite
+// @name         TwitchAdSolutions (vaft)
 // @namespace    https://github.com/pixeltris/TwitchAdSolutions
-// @version      37.0.2-essai
+// @version      37.0.2
 // @description  Multiple solutions for blocking Twitch ads (vaft)
 // @updateURL    https://github.com/prenom6548/TwitchAdSolutions/raw/master/vaft/vaft.user.js
 // @downloadURL  https://github.com/prenom6548/TwitchAdSolutions/raw/master/vaft/vaft.user.js
