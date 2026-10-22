@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TwitchAdSolutions (vaft)
 // @namespace    https://github.com/pixeltris/TwitchAdSolutions
-// @version      37.0.2
+// @version      37.0.3
 // @description  Multiple solutions for blocking Twitch ads (vaft)
 // @updateURL    https://github.com/prenom6548/TwitchAdSolutions/raw/master/vaft/vaft.user.js
 // @downloadURL  https://github.com/prenom6548/TwitchAdSolutions/raw/master/vaft/vaft.user.js
@@ -11,6 +11,17 @@
 // @inject-into  page
 // @grant        none
 // ==/UserScript==
+/* global AdSegmentCache:writable, AdSignifier:writable, AllSegmentsAreAdSegments:writable,
+   AlwaysReloadPlayerOnAd:writable, AuthorizationHeader:writable, BackupPlayerTypes:writable, ClientID:writable,
+   ClientIntegrityHeader:writable, ClientSession:writable, ClientVersion:writable, FallbackPlayerType:writable,
+   ForceAccessTokenPlayerType:writable, GQLDeviceID:writable, HasTriggeredPlayerReload:writable,
+   IsAdStrippingEnabled:writable, PlayerBufferingDangerZone:writable, PlayerBufferingDelay:writable,
+   PlayerBufferingDoPlayerReload:writable, PlayerBufferingFix:writable, PlayerBufferingMinRepeatDelay:writable,
+   PlayerBufferingPrerollCheckEnabled:writable, PlayerBufferingPrerollCheckOffset:writable,
+   PlayerBufferingSameStateCount:writable, PlayerReloadMinimalRequestsPlayerIndex:writable,
+   PlayerReloadMinimalRequestsTime:writable, ReloadPlayerAfterAd:writable, SimulatedAdsDepth:writable,
+   SkipPlayerReloadOnHevc:writable, StreamInfos:writable, StreamInfosByUrl:writable, V2API:writable,
+   pendingFetchRequests:writable */
 (function() {
     'use strict';
     const ourTwitchAdSolutionsVersion = 24;// Used to prevent conflicts with outdated versions of the scripts
@@ -733,7 +744,7 @@
                         // NOTE: This could be improved. It currently lets the player fully eat the full buffer before it triggers pause/play
                         if (playerBufferState.hasStreamStarted &&
                             (!PlayerBufferingPrerollCheckEnabled || position > PlayerBufferingPrerollCheckOffset) &&
-                            (playerBufferState.position == position || bufferDuration < PlayerBufferingDangerZone)  &&
+                            (playerBufferState.position == position || bufferDuration < PlayerBufferingDangerZone) &&
                             playerBufferState.bufferedPosition == bufferedPosition &&
                             playerBufferState.bufferDuration >= bufferDuration &&
                             (position != 0 || bufferedPosition != 0 || bufferDuration != 0)
@@ -839,7 +850,7 @@
             player = player.playerInstance;
         }
         const playerState = findReactNode(reactRootNode, node => node.setSrc && node.setInitialPlaybackSettings);
-        return  {
+        return {
             player: player,
             state: playerState
         };
