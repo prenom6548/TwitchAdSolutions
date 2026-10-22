@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TwitchAdSolutions (vaft)
 // @namespace    https://github.com/pixeltris/TwitchAdSolutions
-// @version      37.0.1
+// @version      37.0.2
 // @description  Multiple solutions for blocking Twitch ads (vaft)
 // @updateURL    https://github.com/prenom6548/TwitchAdSolutions/raw/master/vaft/vaft.user.js
 // @downloadURL  https://github.com/prenom6548/TwitchAdSolutions/raw/master/vaft/vaft.user.js
@@ -35,7 +35,7 @@
         scope.AlwaysReloadPlayerOnAd = false;// Always pause/play when entering/leaving ads
         scope.ReloadPlayerAfterAd = true;// After the ad finishes do a player reload instead of pause/play
         scope.PlayerReloadMinimalRequestsTime = 1500;
-        scope.PlayerReloadMinimalRequestsPlayerIndex = 2;//autoplay
+        scope.PlayerReloadMinimalRequestsPlayerIndex = 0;//embed (was 2 = autoplay, 360p)
         scope.HasTriggeredPlayerReload = false;
         scope.StreamInfos = [];
         scope.StreamInfosByUrl = [];
